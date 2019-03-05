@@ -22,7 +22,7 @@
               :class="{selected: layersSelection[layer.name] === props.item.ol_uid}"
               @click="selectFeature(props.item, props.index)">
               <td
-                class="icon"
+                class="icon px-3"
                 @click="zoomToFeature(props.item)">
                 <icon name="zoom-to"/>
               </td>
@@ -170,7 +170,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .tabs {
   position: absolute;
   height: 1.8em;
@@ -218,27 +218,27 @@ export default {
 .table-container {
   background-color: #fff;
 }
-table.table {
+table.v-table {
   thead {
     tr {
       height: 2em;
       background-color: #ddd;
     }
-    th.column {
-    }
   }
   tbody {
-    tr.selected {
-      background-color: rgba(3,169,244, 0.25)!important;
+    tr {
+      &.selected {
+        background-color: rgba(3,169,244, 0.25)!important;
+      }
     }
     td {
       height: 2.5em;
       &.icon {
         cursor: pointer;
-        padding: 0.75em;
         .icon {
-          width: 20px;
-          height: 20px;
+          display: block;
+          width: 1.5em;
+          height: 1.5em;
           color: #777;
         }
       }
