@@ -23,6 +23,8 @@ function labelRenderer (pixel, state) {
   const ctx = state.context
   ctx.save()
   ctx.translate(pixel[0], pixel[1])
+  const pixelRatio = window.devicePixelRatio
+  ctx.scale(pixelRatio, pixelRatio)
 
   ctx.font = 'bold 13px Calibri,sans-serif'
   const tbox = ctx.measureText(text)
